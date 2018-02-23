@@ -25,16 +25,17 @@ export class Trivia extends React.Component {
     .then(data => {
       let info = data.results;
       info.map((x) =>
-        //console.log(question.category)
+
         //question.category;
-      { this.setState({categories: x})
+      { this.setState({})
+        categories.push(x.category)
         questions.push(x.question)
         answers.push(x.correct_answer)
-        wrongAnswers.push(x.incorrect_answers.join(' | '))
+        wrongAnswers.push(x.incorrect_answers)
         }
       )
     })
-    //this.setState({categories: categories});
+    this.setState({categories: categories});
     this.setState({questions: questions});
     this.setState({correctAnswer: answers })
     this.setState({wrongAnswers: wrongAnswers})
@@ -49,11 +50,10 @@ export class Trivia extends React.Component {
 render() {
   return (
     <div>
-<h1>{this.state.categories[8]}</h1>
-<h3>{this.state.questions[8]}</h3>
-<h4>{this.state.correctAnswer[8]}</h4>
-<p>{this.state.wrongAnswers[8]}</p>
-
+      <h1>{this.state.categories[8]}</h1>
+      <h3>{this.state.questions[8]}</h3>
+      <h4>Correct: {this.state.correctAnswer[8]}</h4>
+      <h4>{this.state.wrongAnswers[8]}</h4>
     </div>
 )
 }
