@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { New } from './New';
+import { Trivia } from './Trivia';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<New />, document.getElementById('bottom'));
+//ReactDOM.render(<Trivia />, document.getElementById('bottom'));
 
 registerServiceWorker();

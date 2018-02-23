@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 
-export class New extends React.Component {
+export class Trivia extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +11,7 @@ export class New extends React.Component {
       correctAnswer: [],
       wrongAnswers: []
     }
+    //this.loopInfo = this.loopInfo.bind(this);
   }
 
 
@@ -18,7 +19,7 @@ export class New extends React.Component {
     const questions = [];
     const categories = [];
     const answers = [];
-    const wrongAnswers = []
+    const wrongAnswers = [];
   fetch('https://opentdb.com/api.php?amount=10')
     .then(response => response.json())
     .then(data => {
@@ -26,33 +27,36 @@ export class New extends React.Component {
       info.map((x) =>
         //console.log(question.category)
         //question.category;
-      { categories.push(x.category)
+      { this.setState({categories: x})
         questions.push(x.question)
         answers.push(x.correct_answer)
-        wrongAnswers.push(x.incorrect_answers)
+        wrongAnswers.push(x.incorrect_answers.join(' | '))
         }
       )
     })
-
-      //data.response.map(data => data.results))
-    this.setState({categories: categories});
+    //this.setState({categories: categories});
     this.setState({questions: questions});
     this.setState({correctAnswer: answers })
     this.setState({wrongAnswers: wrongAnswers})
-    //console.log(this.state.categories)
+    console.log(categories)
   }
 
+//const cate = for (let i = 0; i < this.state.categories.length; i++) {
+//  console.log(this.state.category[i]);
+//}
 
 
-  render() {
-    return (
-        <div>
-          {this.state.categories[0]}
-        </div>
-    )
-  }
+render() {
+  return (
+    <div>
+<h1>{this.state.categories[8]}</h1>
+<h3>{this.state.questions[8]}</h3>
+<h4>{this.state.correctAnswer[8]}</h4>
+<p>{this.state.wrongAnswers[8]}</p>
 
-
+    </div>
+)
+}
 }
 
-//ReactDOM.render(<New />, document.getElementById('bottom'));
+ReactDOM.render(<Trivia />, document.getElementById('bottom'))
