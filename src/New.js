@@ -16,17 +16,16 @@ export class New extends React.Component {
     //const questions = [];
   fetch('https://opentdb.com/api.php?amount=10')
     .then(response => response.json())
-    .then(data => data.reponse.map((questions) => {
-        return(
-          <div key={questions.results}>
-          <p>{questions[0].question}</p>
-          </div>
-        )
-      })
-
-    this.setState({categories: categories});
-    console.log(this.state.categories)
-  })}
+    .then(data => {
+      let questions = data.results;
+      return questions.map((question) =>
+        console.log(question.category)
+      )
+    })
+      //data.response.map(data => data.results))
+    //this.setState({categories: categories});
+    //console.log(this.state.categories)
+  }
 
 
 
