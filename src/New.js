@@ -46,14 +46,13 @@ export class New extends React.Component {
 
   render() {
     return (
-
-
-        <div> {this.state.categories} </div>
-
+        <div>
+          {this.state.categories[0]}
+        </div>
     )
   }
 
 
 }
 
-ReactDOM.render(<New />, document.getElementById('bottom'));
+//ReactDOM.render(<New />, document.getElementById('bottom'));

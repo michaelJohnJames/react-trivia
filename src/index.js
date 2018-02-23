@@ -6,6 +6,6 @@ import { New } from './New';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-//ReactDOM.render(<New />, document.getElementById('bottom'));
+ReactDOM.render(<New />, document.getElementById('bottom'));
 
 registerServiceWorker();
