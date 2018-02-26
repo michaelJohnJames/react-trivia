@@ -1,5 +1,6 @@
 import React from 'react';
 import {Trivia} from './Trivia';
+import {Timer} from './Timer';
 
 
 export class Answer extends React.Component {
@@ -7,7 +8,8 @@ export class Answer extends React.Component {
     super(props);
     this.answersMapped = this.answersMapped.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
-    this.timedOut = this.timedOut.bind(this);
+    this.countDown = this.countDown.bind(this);
+    setTimeout(this.answersMapped, 3000)
   }
 
 
@@ -23,22 +25,19 @@ export class Answer extends React.Component {
     timer.innerHTML = x;
 
   }
-  setInterval(this.countDown, 1000);
-  setInterval(this.timedOut, 10000);
+    var t = setInterval(this.countDown, 1000)
 }
 
-  countDown() {
-    const timer = document.getElementById('timer');
-    var x = timer.textContent;
-    timer.innerHTML = x - 1
-    if (timer.textContent === 0 ) {
-      alert("Sorry, you've run out of time!")
-    }
+countDown(time) {
+  const timer = document.getElementById('timer');
+  var x = timer.textContent;
+  timer.innerHTML = x - 1;
+  if (timer.textContent == 0 ) {
+    console.log("Sorry, you've run out of time!");
+    clearInterval(setInterval(this.countDown, 1000))
   }
+}
 
-  timedOut() {
-    console.log('out of time')
-  }
 
   checkAnswer(e) {
     if (e.target.textContent === this.props.correctAnswer[0]) {
@@ -57,11 +56,8 @@ export class Answer extends React.Component {
     return (
     <div>
       <h4 id="ans" onClick={this.checkAnswer}></h4>
-      <button id="ans-btn" onClick={this.answersMapped}>See answers</button>
       <br/>
-      <br/>
-      <h3>Time left:</h3>
-      <h2 id="timer"></h2>
+      <Timer />
     </div>
     )
   }
