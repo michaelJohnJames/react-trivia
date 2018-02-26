@@ -36,13 +36,12 @@ export class Trivia extends React.Component {
         }
       )
     })
+
+
     this.setState({categories: categories});
     this.setState({questions: questions});
     this.setState({correctAnswer: answers });
     this.setState({wrongAnswers: wrongAnswers});
-    console.log(categories);
-
-
   }
 
 
