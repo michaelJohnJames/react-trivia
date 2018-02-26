@@ -26,7 +26,6 @@ export class Trivia extends React.Component {
       let info = data.results;
       info.map((x) =>
 
-        //question.category;
       { this.setState({})
         categories.push(x.category)
         questions.push(x.question)
@@ -37,26 +36,20 @@ export class Trivia extends React.Component {
     })
     this.setState({categories: categories});
     this.setState({questions: questions});
-    this.setState({correctAnswer: answers })
-    this.setState({wrongAnswers: wrongAnswers})
-    console.log(categories)
+    this.setState({correctAnswer: answers });
+    this.setState({wrongAnswers: wrongAnswers});
+    console.log(categories);
+
 
   }
 
-//const cate = for (let i = 0; i < this.state.categories.length; i++) {
-//  console.log(this.state.category[i]);
-//}
-
-
-
-
-answersMapped() {
-  const array = this.state.wrongAnswers[8]
-  var ans = document.getElementById('ans')
-for (let i = 0; i < array.length; i++) {
-  ans.innerHTML += "<h4>" + array[i] + "</h4>"
-}
-}
+  answersMapped() {
+    const array = this.state.wrongAnswers[8]
+    var ans = document.getElementById('ans')
+  for (let i = 0; i < array.length; i++) {
+    ans.innerHTML += "<h4>" + array[i] + "</h4>"
+  }
+  }
 
 
 render() {
@@ -65,7 +58,7 @@ render() {
       <h1>{this.state.categories[8]}</h1>
       <h3>{this.state.questions[8]}</h3>
       <h4>Correct: {this.state.correctAnswer[8]}</h4>
-      <h4>{this.state.wrongAnswers[8]}</h4>
+      <h4 id="ans" onLoad={this.answersMapped} ></h4>
       <button onClick={this.answersMapped}>Click for Wrong answers</button>
       <p></p>
     </div>
@@ -73,4 +66,4 @@ render() {
 }
 }
 
-ReactDOM.render(<Trivia />, document.getElementById('bottom'))
+//ReactDOM.render(<Trivia />, document.getElementById('bottom'))
