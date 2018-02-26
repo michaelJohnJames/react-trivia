@@ -18,9 +18,9 @@ export class Answer extends React.Component {
     const timer = document.getElementById('timer');
     const array = this.props.wrongAnswers[0];
     const ans = document.getElementById('ans');
-    ans.innerHTML += "<h4>" + this.props.correctAnswer[0] + "</h4>";
+    ans.innerHTML += "<button className={answer}>" + this.props.correctAnswer[0] + "</button> <br/>";
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<h4>" + array[i] + "</h4>"
+    ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/>"
     }
     this.countDown();
   }
