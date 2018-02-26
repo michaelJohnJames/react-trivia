@@ -11,7 +11,7 @@ export class Trivia extends React.Component {
       correctAnswer: [],
       wrongAnswers: []
     }
-    //this.loopInfo = this.loopInfo.bind(this);
+    this.answersMapped = this.answersMapped.bind(this);
   }
 
 
@@ -40,11 +40,23 @@ export class Trivia extends React.Component {
     this.setState({correctAnswer: answers })
     this.setState({wrongAnswers: wrongAnswers})
     console.log(categories)
+
   }
 
 //const cate = for (let i = 0; i < this.state.categories.length; i++) {
 //  console.log(this.state.category[i]);
 //}
+
+
+
+
+answersMapped() {
+  const array = this.state.wrongAnswers[8]
+  var ans = document.getElementById('ans')
+for (let i = 0; i < array.length; i++) {
+  ans.innerHTML += "<h4>" + array[i] + "</h4>"
+}
+}
 
 
 render() {
@@ -54,6 +66,8 @@ render() {
       <h3>{this.state.questions[8]}</h3>
       <h4>Correct: {this.state.correctAnswer[8]}</h4>
       <h4>{this.state.wrongAnswers[8]}</h4>
+      <button onClick={this.answersMapped}>Click for Wrong answers</button>
+      <p></p>
     </div>
 )
 }
