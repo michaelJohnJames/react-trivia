@@ -1,6 +1,7 @@
 import React from 'react';
 import {Trivia} from './Trivia';
 import {Timer} from './Timer';
+import {btnStyles } from './index.css'
 
 
 export class Answer extends React.Component {
@@ -18,9 +19,9 @@ export class Answer extends React.Component {
     const timer = document.getElementById('timer');
     const array = this.props.wrongAnswers[0];
     const ans = document.getElementById('ans');
-    ans.innerHTML += "<button className={answer}>" + this.props.correctAnswer[0] + "</button> <br/>";
+    ans.innerHTML += "<button style={btnStyles} className={answer}>" + this.props.correctAnswer[0] + "</button> <br/> <br/>";
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/>"
+    ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/> <br/>"
     }
     this.countDown();
   }

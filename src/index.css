@@ -4,3 +4,18 @@ body {
   font-family: sans-serif;
   text-align: center;
 }
+
+button {
+  width: 250px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  border-radius: 25px;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: pointer;
+  color: black;
+  background-color: white;
+}
