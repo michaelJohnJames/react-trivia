@@ -12,10 +12,12 @@ button {
   background-color: black;
   border-radius: 25px;
   font-size: 15px;
+  border: 1px solid white;
 }
 
 button:hover {
   cursor: pointer;
   color: black;
   background-color: white;
+  border: 1px solid black;
 }

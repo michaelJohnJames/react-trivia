@@ -2,6 +2,8 @@ import React from 'react';
 import {Trivia} from './Trivia';
 import {Timer} from './Timer';
 import {btnStyles } from './index.css'
+import {Right} from './Right'
+import ReactDOM from 'react-dom';
 
 
 export class Answer extends React.Component {
@@ -44,10 +46,11 @@ countDown() {
 
 
   checkAnswer(e) {
-    const btns = document.querySelectorAll('button')
+    const ans = document.getElementById('ans')
     console.log(e.target.innerHTML);
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      console.log("You are correct")
+      ReactDOM.render(<Right />, document.getElementById('container'))
+      console.log('Correct!')
 
     } else {
       console.log("Sorry you are wrong, the answer is " +  this.props.correctAnswer[0])
