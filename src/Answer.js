@@ -34,7 +34,7 @@ countDown() {
      var x = timer.textContent;
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
-        alert("Sorry, you are out of time!");
+        console.log("Sorry, you are out of time!");
         clearInterval(t);
       }
     }, 1000);
@@ -43,11 +43,13 @@ countDown() {
 
 
   checkAnswer(e) {
+    const btns = document.querySelectorAll('button')
+    console.log(e.target.innerHTML);
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      alert("You are correct")
+      console.log("You are correct")
 
     } else {
-      alert("Sorry you are wrong, the answer is " +  this.props.correctAnswer[0])
+      console.log("Sorry you are wrong, the answer is " +  this.props.correctAnswer[0])
     }
   }
 
@@ -58,7 +60,8 @@ countDown() {
     const ans = document.getElementById('ans');
     return (
     <div>
-      <h4 id="ans" onClick={this.checkAnswer}></h4>
+      <div id="ans" onClick={this.checkAnswer}>
+      </div>
       <br/>
       <Timer />
     </div>
