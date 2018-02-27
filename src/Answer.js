@@ -9,10 +9,13 @@ import ReactDOM from 'react-dom';
 export class Answer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      numAnswered: 0
+    }
     this.answersMapped = this.answersMapped.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
     this.countDown = this.countDown.bind(this);
-    setTimeout(this.answersMapped, 3000);
+    setTimeout(this.answersMapped, 2000);
   }
 
 
