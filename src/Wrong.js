@@ -17,7 +17,7 @@ export class Wrong extends React.Component {
   render() {
     return (
       <div>
-      <h1>Sorry you are incorrect!</h1>
+      <h1>Sorry, you are incorrect!</h1>
       <h4>The correct answer was {this.props.correctAnswer}</h4>
       <button onClick={this.nextQuestion}>Next question</button>
       </div>
