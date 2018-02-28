@@ -1,9 +1,10 @@
 import React from 'react';
 import {Trivia} from './Trivia';
 import {Timer} from './Timer';
-import {btnStyles } from './index.css'
-import {Right} from './Right'
-import {Wrong} from './Wrong'
+import {btnStyles } from './index.css';
+import {Right} from './Right';
+import {Wrong} from './Wrong';
+import {Timeout} from './Timeout.js';
 import ReactDOM from 'react-dom';
 
 
@@ -34,6 +35,7 @@ export class Answer extends React.Component {
 
 
 countDown() {
+    const correct = this.props.correctAnswer[0]
     const timer = document.getElementById('timer');
     var x = 10;
     timer.textContent = x;
@@ -42,7 +44,8 @@ countDown() {
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
         clearInterval(t);
-        ReactDOM.render(<TimesUp correctAnswer={this.props.correctAnswer[0]}, document.getElementById('container'))
+        console.log("you are out of time");
+        ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
       }
     }, 1000);
   }
