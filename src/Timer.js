@@ -1,7 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {Answer} from './Answer';
 
+
 export class Timer extends React.Component {
+
+
 
 
   render() {

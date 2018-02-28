@@ -26,15 +26,17 @@ export class Answer extends React.Component {
     const timer = document.getElementById('timer');
     const array = this.props.wrongAnswers[0];
     const ans = document.getElementById('ans');
-    ans.innerHTML += "<button style={btnStyles} className={answer}>" + this.props.correctAnswer[0] + "</button> <br/> <br/>";
+    array.push(this.props.correctAnswer[0]);
+    array.sort();
+    console.log(array);
     for (let i = 0; i < array.length; i++) {
     ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/> <br/>"
-    }
+  }
     this.countDown();
   }
 
 
-countDown() {
+countDown(e) {
     const correct = this.props.correctAnswer[0]
     const timer = document.getElementById('timer');
     var x = 10;
@@ -44,8 +46,10 @@ countDown() {
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
         clearInterval(t);
-        console.log("you are out of time");
         ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
+      } else if (e.target.textContent) {
+        clearInterval(t);
+
       }
     }, 1000);
   }
@@ -54,12 +58,12 @@ countDown() {
 
   checkAnswer(e) {
     const ans = document.getElementById('ans')
-    console.log(e.target.innerHTML);
     if (e.target.textContent === this.props.correctAnswer[0]) {
+      clearInterval(t);
       ReactDOM.render(<Right />, document.getElementById('container'))
     } else {
+      clearInterval(t);
       ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
-      console.log("Sorry you are wrong, the answer is " +  this.props.correctAnswer[0])
     }
   }
 
@@ -70,7 +74,7 @@ countDown() {
     const ans = document.getElementById('ans');
     return (
     <div>
-      <div id="ans" onClick={this.checkAnswer}>
+      <div id="ans" onClick={this.checkAnswer} onClick={this.countDown}>
       </div>
       <br/>
       <Timer />
