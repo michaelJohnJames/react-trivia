@@ -18,6 +18,7 @@ export class Answer extends React.Component {
     this.checkAnswer = this.checkAnswer.bind(this);
     this.countDown = this.countDown.bind(this);
     setTimeout(this.answersMapped, 2000);
+    setTimeout(this.countDown, 2000);
   }
 
 
@@ -32,37 +33,45 @@ export class Answer extends React.Component {
     for (let i = 0; i < array.length; i++) {
     ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/> <br/>"
   }
-    this.countDown();
+  //this.countDown();
   }
 
 
-countDown(e) {
+countDown() {
     const correct = this.props.correctAnswer[0]
     const timer = document.getElementById('timer');
     var x = 10;
     timer.textContent = x;
-     var t = setInterval(function() {
-     var x = timer.textContent;
+    var t = setInterval(function() {
+    var x = timer.textContent;
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
-        clearInterval(t);
+        clearInterval();
         ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
-      } else if (e.target.textContent) {
-        clearInterval(t);
-
       }
     }, 1000);
   }
 
+  // time() {
+  //   var x = 10;
+  //   const timer = document.getElementById('timer');
+  //   timer.textContent = 10;
+  //    timer.textContent = x - 1;
+  //     if (timer.textContent == 0) {
+  //       //ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
+  //     }
+  // }
+
+
+
 
 
   checkAnswer(e) {
+    //clearInteral(t);
     const ans = document.getElementById('ans')
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      clearInterval(t);
       ReactDOM.render(<Right />, document.getElementById('container'))
     } else {
-      clearInterval(t);
       ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
   }
@@ -70,11 +79,11 @@ countDown(e) {
 
 
   render() {
-    const array = this.props.wrongAnswers[0];
-    const ans = document.getElementById('ans');
+    //const array = this.props.wrongAnswers[0];
+    //const ans = document.getElementById('ans');
     return (
     <div>
-      <div id="ans" onClick={this.checkAnswer} onClick={this.countDown}>
+      <div id="ans" onClick={this.checkAnswer}>
       </div>
       <br/>
       <Timer />
