@@ -10,8 +10,7 @@ export class Container extends React.Component {
 render() {
   return (
     <div style={{backgroundColor: 'yellow', width: 1000, height: 700, zIndex: 1, backgroundRadius: 75 }}>
-      <p> Answered correctly: {this.props.numRight} </p>
-      <Trivia numRight={this.props.numRight} />
+      <Trivia />
 
     </div>
   )

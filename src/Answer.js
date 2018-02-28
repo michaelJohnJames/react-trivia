@@ -3,6 +3,7 @@ import {Trivia} from './Trivia';
 import {Timer} from './Timer';
 import {btnStyles } from './index.css'
 import {Right} from './Right'
+import {Wrong} from './Wrong'
 import ReactDOM from 'react-dom';
 
 
@@ -40,8 +41,8 @@ countDown() {
      var x = timer.textContent;
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
-        console.log("Sorry, you are out of time!");
         clearInterval(t);
+        ReactDOM.render(<TimesUp correctAnswer={this.props.correctAnswer[0]}, document.getElementById('container'))
       }
     }, 1000);
   }
@@ -53,9 +54,8 @@ countDown() {
     console.log(e.target.innerHTML);
     if (e.target.textContent === this.props.correctAnswer[0]) {
       ReactDOM.render(<Right />, document.getElementById('container'))
-      console.log('Correct!')
-
     } else {
+      ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
       console.log("Sorry you are wrong, the answer is " +  this.props.correctAnswer[0])
     }
   }
