@@ -42,6 +42,7 @@ export class Trivia extends React.Component {
     this.setState({questions: questions});
     this.setState({correctAnswer: answers });
     this.setState({wrongAnswers: wrongAnswers});
+
   }
 
 
