@@ -24,7 +24,12 @@ export class Answer extends React.Component {
     super(props);
       this.state = {
       timerStart: 10,
-      t: null
+      time: setInterval(function () {
+        let x = 10;
+        x = x--;
+        console.log(x);
+      }, 1000)
+
     }
 
 
@@ -53,21 +58,22 @@ export class Answer extends React.Component {
 
 
 countDown() {
-    clearInterval(t);
-    console.log(t);
+
+    //console.log(t);
+    this.setState({time: 10})
     const correct = this.props.correctAnswer[0]
     const timer = document.getElementById('timer');
     var x = 10;
-    timer.textContent = x;
+    timer.textContent = this.state.time;
     var x = timer.textContent;
     console.log(x)
-    var t = setInterval(function () {
+    const t = setInterval(function () {
       var x = timer.textContent;
      timer.textContent = x - 1;
       if (timer.textContent == 0) {
-        clearInterval(t);
-        ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
-    }
+       clearInterval(t);
+       ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
+   }
   }, 1000)
 
   }
@@ -83,14 +89,10 @@ countDown() {
   //     }
   // }
 
-  stopClock(t) {
-
-    clearInterval(t);
-      console.log(t);
-  }
 
   componentWillUnmount(t) {
-    clearInterval(t);
+    console.log(t)
+    window.clearInterval(t);
   }
 
 
@@ -100,7 +102,7 @@ countDown() {
   checkAnswer(e) {
     const ans = document.getElementById('ans')
     const timer = document.getElementById('timer');
-
+    clearInterval(this.state.time);
     if (e.target.textContent === this.props.correctAnswer[0]) {
       ReactDOM.render(<Right />, document.getElementById('container'))
     } else {
