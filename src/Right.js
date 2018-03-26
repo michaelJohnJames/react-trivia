@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Container} from './Container';
+import {Button} from 'react-bootstrap';
+
 
 export class Right extends React.Component {
   constructor(props) {
@@ -30,8 +32,7 @@ addToNum() {
       <div>
       <h1>You are correct!</h1>
       <p>You have answered {this.state.numRight} correctly!</p>
-      <button onClick={this.nextQuestion}>Next question</button>
-      <button onClick={this.addToNum}>Add</button>
+      <Button bsStyle="success" bsSize="large" onClick={this.nextQuestion}>Next question</Button>
       </div>
     )
   }
