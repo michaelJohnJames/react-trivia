@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Question} from './Question';
 import {Answer} from './Answer';
+import Bootstrap from 'react-bootstrap';
 
 
 
@@ -69,7 +70,9 @@ export class Trivia extends React.Component {
 
 render() {
   return (
-    <div>
+    <div class="card" class="bg-info">
+    <br></br>
+    <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />
       <Answer correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
     </div>
