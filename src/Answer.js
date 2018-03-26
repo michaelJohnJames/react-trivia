@@ -36,7 +36,7 @@ export class Answer extends React.Component {
     this.answersMapped = this.answersMapped.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
     //this.stopTimer = this.stopTimer.bind(this);
-    this.countDown = this.countDown.bind(this);
+    //this.countDown = this.countDown.bind(this);
     setTimeout(this.answersMapped, 2000);
     //setTimeout(this.countDown, 2000);
 
@@ -44,7 +44,7 @@ export class Answer extends React.Component {
 
 
   answersMapped() {
-    const timer = document.getElementById('timer');
+    // const timer = document.getElementById('timer');
     const array = this.props.wrongAnswers[0];
     const ans = document.getElementById('ans');
     array.push(this.props.correctAnswer[0]);
@@ -53,30 +53,30 @@ export class Answer extends React.Component {
     for (let i = 0; i < array.length; i++) {
     ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/> <br/>"
   }
-    this.countDown();
+    //this.countDown();
   }
 
 
-countDown() {
-
-    //console.log(t);
-    this.setState({time: 10})
-    const correct = this.props.correctAnswer[0]
-    const timer = document.getElementById('timer');
-    var x = 10;
-    timer.textContent = this.state.time;
-    var x = timer.textContent;
-    console.log(x)
-    const t = setInterval(function () {
-      var x = timer.textContent;
-     timer.textContent = x - 1;
-      if (timer.textContent == 0) {
-       clearInterval(t);
-       ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
-   }
-  }, 1000)
-
-  }
+// countDown() {
+//
+//     //console.log(t);
+//     this.setState({time: 10})
+//     const correct = this.props.correctAnswer[0]
+//     const timer = document.getElementById('timer');
+//     var x = 10;
+//     timer.textContent = this.state.time;
+//     var x = timer.textContent;
+//     console.log(x)
+//     const t = setInterval(function () {
+//       var x = timer.textContent;
+//      timer.textContent = x - 1;
+//       if (timer.textContent == 0) {
+//        clearInterval(t);
+//        ReactDOM.render(<Timeout correctAnswer={correct} />, document.getElementById('container'))
+//    }
+//   }, 1000)
+//
+//   }
 
 
   // time() {
@@ -120,7 +120,7 @@ countDown() {
       <div id="ans" onClick={this.checkAnswer}>
       </div>
       <br/>
-      <Timer />
+
     </div>
     )
   }
