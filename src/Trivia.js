@@ -32,7 +32,7 @@ export class Trivia extends React.Component {
 
       { this.setState({})
         categories.push(x.category)
-        questions.push(x.question.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&shy;/g, "-").replace(/&#039;/g, "'"))
+        questions.push(x.question.replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&shy;/g, "-").replace(/&#039;/g, "'").replace(/&ldquo;/g, '"').replace(/&rdquo;/g, '"'))
         answers.push(x.correct_answer)
         wrongAnswers.push(x.incorrect_answers)
         }

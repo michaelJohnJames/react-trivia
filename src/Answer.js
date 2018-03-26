@@ -6,6 +6,8 @@ import {Right} from './Right';
 import {Wrong} from './Wrong';
 import {Timeout} from './Timeout.js';
 import ReactDOM from 'react-dom';
+import {Button} from 'react-bootstrap';
+
 //var t = setInterval(function() {
   //const timer = document.getElementById('timer');
   //var x = 10
@@ -51,7 +53,7 @@ export class Answer extends React.Component {
     array.sort();
     console.log(array);
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<button className={answer}>" + array[i] + "</button> <br/> <br/>"
+    ans.innerHTML += "<Button bsStyle={success}>" + array[i] + "</Button> <br/> <br/>"
   }
     //this.countDown();
   }
@@ -117,6 +119,9 @@ export class Answer extends React.Component {
     //const ans = document.getElementById('ans');
     return (
     <div>
+    <Button bsStyle="primary" bsSize="large" active>
+      Primary button
+    </Button>
       <div id="ans" onClick={this.checkAnswer}>
       </div>
       <br/>
