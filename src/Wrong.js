@@ -18,8 +18,13 @@ export class Wrong extends React.Component {
   render() {
     return (
       <div>
-      <h1>Sorry, you are incorrect!</h1>
-      <h4>The correct answer was {this.props.correctAnswer}</h4>
+        <br></br>
+        <br></br>
+      <h2>Sorry, you are incorrect!</h2>
+      <h4>The correct answer was </h4>
+      <h4>{this.props.correctAnswer}</h4>
+        <br></br>
+        <br></br>
       <Button bsStyle="danger" bsSize="large" onClick={this.nextQuestion}>Next question</Button>
       </div>
     )

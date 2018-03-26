@@ -53,7 +53,7 @@ export class Answer extends React.Component {
     array.sort();
     console.log(array);
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<Button bsStyle={success} bsSize={large}>" + array[i] + "</Button> <br/> <br/>"
+    ans.innerHTML += "<button> " + array[i] + "</button> <br/> <br/>"
   }
     //this.countDown();
   }
