@@ -58,7 +58,6 @@ render() {
   return (
     <div bsStyle="card" className="bg-light">
     <br></br>
-    <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />
     <br></br>
       <Answer correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
