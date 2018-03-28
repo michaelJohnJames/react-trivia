@@ -6,7 +6,7 @@ import {Right} from './Right';
 import {Wrong} from './Wrong';
 import {Timeout} from './Timeout.js';
 import ReactDOM from 'react-dom';
-import {Button} from 'react-bootstrap';
+
 
 //var t = setInterval(function() {
   //const timer = document.getElementById('timer');
@@ -29,7 +29,7 @@ export class Answer extends React.Component {
       time: setInterval(function () {
         let x = 10;
         x = x--;
-        console.log(x);
+
       }, 1000)
 
     }
@@ -51,9 +51,8 @@ export class Answer extends React.Component {
     const ans = document.getElementById('ans');
     array.push(this.props.correctAnswer[0]);
     array.sort();
-    console.log(array);
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<button> " + array[i] + "</button> <br/> <br/>"
+    ans.innerHTML += "<button>" + array[i] + "</button> <br/> <br/>"
   }
     //this.countDown();
   }
@@ -93,7 +92,7 @@ export class Answer extends React.Component {
 
 
   componentWillUnmount(t) {
-    console.log(t)
+    //console.log(t)
     window.clearInterval(t);
   }
 
@@ -104,7 +103,6 @@ export class Answer extends React.Component {
   checkAnswer(e) {
     const ans = document.getElementById('ans')
     const timer = document.getElementById('timer');
-    clearInterval(this.state.time);
     if (e.target.textContent === this.props.correctAnswer[0]) {
       ReactDOM.render(<Right />, document.getElementById('container'))
     } else {
@@ -118,7 +116,7 @@ export class Answer extends React.Component {
     //const array = this.props.wrongAnswers[0];
     //const ans = document.getElementById('ans');
     return (
-    <div>
+    <div bsStyle="bg-light">
       <div id="ans" onClick={this.checkAnswer}>
       </div>
       <br/>

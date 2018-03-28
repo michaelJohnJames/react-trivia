@@ -56,7 +56,7 @@ export class Trivia extends React.Component {
 
 render() {
   return (
-    <div class="card" class="bg-info">
+    <div className="card" className="bg-light">
     <br></br>
     <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />

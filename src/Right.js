@@ -29,11 +29,19 @@ addToNum() {
 
   render() {
     return (
-      <div>
-      <h1>You are correct!</h1>
-      <p>You have answered {this.state.numRight} correctly!</p>
-      <Button bsStyle="success" bsSize="large" onClick={this.nextQuestion}>Next question</Button>
+      <div class="card" class="bg-light">
+        <br></br>
+        <br></br>
+        <h2>You are correct!</h2>
+        <p>You have answered {this.state.numRight} correctly!</p>
+        <br></br>
+        <br></br>
+        <Button bsStyle="success" bsSize="large" onClick={this.nextQuestion}>Next question</Button>
+        <br></br>
+        <br></br>
       </div>
+
+
     )
   }
 }

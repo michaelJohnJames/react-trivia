@@ -1,6 +1,13 @@
-*{
+#root {
   text-align: center;
+  background-color: #ffcc00;
 }
+
+#header {
+  background-color: #f4d742;
+}
+
+
 
 .App {
   text-align: center;
