@@ -35,10 +35,10 @@ export class Answer extends React.Component {
 
     }
 
-
+    this.handleHelper = this.handleHelper.bind(this)
     this.answersMapped = this.answersMapped.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
-    this.handleScoreChange = this.handleScoreChange.bind(this);
+    //this.handleScoreChange = this.handleScoreChange.bind(this);
     //this.stopTimer = this.stopTimer.bind(this);
     //this.countDown = this.countDown.bind(this);
     setTimeout(this.answersMapped, 2000);
@@ -108,15 +108,16 @@ export class Answer extends React.Component {
 
     if (e.target.textContent === this.props.correctAnswer[0]) {
       this.setState({score: 1})
-      ReactDOM.render(<Right score={this.state.score += 1} />, document.getElementById('container'))
+      ReactDOM.render(<Right />, document.getElementById('container'))
     }  else {
             ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
   }
 
-  handleScoreChange(e) {
-    this.props.onScoreChange(this.props.score + 1)
-  }
+handleHelper(e) {
+  this.props.onScoreChange(this.props.score + 1)
+}
+
 
 
 
@@ -125,7 +126,7 @@ export class Answer extends React.Component {
     //const ans = document.getElementById('ans');
     return (
     <div bsStyle="bg-light">
-      <div id="ans" onClick={this.handleScoreChange}>
+      <div id="ans" onClick={this.handleHelper}>
       </div>
       <br/>
 

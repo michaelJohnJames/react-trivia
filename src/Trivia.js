@@ -15,9 +15,9 @@ export class Trivia extends React.Component {
       questions: [],
       correctAnswer: [],
       wrongAnswers: [],
-      score: 0
+      //score: 0
     }
-    this.handleScoreChange = this.handleScoreChange.bind(this)
+    this.handleHelper = this.handleHelper.bind(this)
   }
 
 
@@ -56,9 +56,10 @@ export class Trivia extends React.Component {
 
   }
 
-  handleScoreChange(score) {
-    this.setState({score})
-  }
+   handleHelper(score) {
+     //this.setState({score})
+      this.props.onScoreChange(this.props.score + 1)
+   }
 
 
 
@@ -66,15 +67,14 @@ export class Trivia extends React.Component {
 
 
 render() {
-  const score = this.state.score
+
   return (
 
     <div bsStyle="card" className="bg-light">
-    <Header score={this.state.score} />
     <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />
     <br></br>
-      <Answer score={this.state.score} onScoreChange={this.handleScoreChange}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
+      <Answer score={this.props.score} onScoreChange={this.handleHelper}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
     </div>
 )
 }
