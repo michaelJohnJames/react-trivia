@@ -52,7 +52,7 @@ export class Answer extends React.Component {
     array.push(this.props.correctAnswer[0]);
     array.sort();
     for (let i = 0; i < array.length; i++) {
-    ans.innerHTML += "<button>" + array[i] + "</button> <br/> <br/>"
+    ans.innerHTML += "<Well><button>" + array[i] + "</button></Well> <br/> <br/>"
   }
     //this.countDown();
   }

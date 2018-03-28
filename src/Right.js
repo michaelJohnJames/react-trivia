@@ -33,7 +33,6 @@ addToNum() {
         <br></br>
         <br></br>
         <h2>You are correct!</h2>
-        <p>You have answered {this.state.numRight} correctly!</p>
         <br></br>
         <br></br>
         <Button bsStyle="success" bsSize="large" onClick={this.nextQuestion}>Next question</Button>
