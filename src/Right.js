@@ -18,7 +18,7 @@ componentWillMount() {
 }
 
 nextQuestion() {
-  ReactDOM.render(<Container />, document.getElementById('container'))
+  ReactDOM.render(<Container score={this.props.score} />, document.getElementById('container'))
 }
 
 addToNum() {
@@ -33,6 +33,7 @@ addToNum() {
         <br></br>
         <br></br>
         <h2>You are correct!</h2>
+        <p>{this.props.score}</p>
         <br></br>
         <br></br>
         <Button bsStyle="success" bsSize="large" onClick={this.nextQuestion}>Next question</Button>

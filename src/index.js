@@ -8,6 +8,8 @@ import { Header } from './Header';
 import registerServiceWorker from './registerServiceWorker';
 import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
+
+
 ReactDOM.render(<Header />, document.getElementById('header'))
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Container />, document.getElementById('container'))

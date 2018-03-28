@@ -25,6 +25,7 @@ export class Answer extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
+        score: this.props.score,
       timerStart: 10,
       time: setInterval(function () {
         let x = 10;
@@ -37,6 +38,7 @@ export class Answer extends React.Component {
 
     this.answersMapped = this.answersMapped.bind(this);
     this.checkAnswer = this.checkAnswer.bind(this);
+    this.handleScoreChange = this.handleScoreChange.bind(this);
     //this.stopTimer = this.stopTimer.bind(this);
     //this.countDown = this.countDown.bind(this);
     setTimeout(this.answersMapped, 2000);
@@ -103,11 +105,17 @@ export class Answer extends React.Component {
   checkAnswer(e) {
     const ans = document.getElementById('ans')
     const timer = document.getElementById('timer');
+
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      ReactDOM.render(<Right />, document.getElementById('container'))
-    } else {
+      this.setState({score: 1})
+      ReactDOM.render(<Right score={this.state.score += 1} />, document.getElementById('container'))
+    }  else {
             ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
+  }
+
+  handleScoreChange(e) {
+    this.props.onScoreChange(this.props.score + 1)
   }
 
 
@@ -117,7 +125,7 @@ export class Answer extends React.Component {
     //const ans = document.getElementById('ans');
     return (
     <div bsStyle="bg-light">
-      <div id="ans" onClick={this.checkAnswer}>
+      <div id="ans" onClick={this.handleScoreChange}>
       </div>
       <br/>
 

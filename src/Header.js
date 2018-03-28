@@ -21,7 +21,7 @@ export class Header extends React.Component {
     </Navbar.Header>
     <Nav>
       <NavItem>
-        Your score: {this.state.score}
+        Your score: {this.props.score}
       </NavItem>
     </Nav>
   </Navbar>

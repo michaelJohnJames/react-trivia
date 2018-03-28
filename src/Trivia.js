@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Question} from './Question';
 import {Answer} from './Answer';
+import {Header} from './Header';
 import Bootstrap from 'react-bootstrap';
 
 
@@ -13,8 +14,10 @@ export class Trivia extends React.Component {
       categories: [],
       questions: [],
       correctAnswer: [],
-      wrongAnswers: []
+      wrongAnswers: [],
+      score: 0
     }
+    this.handleScoreChange = this.handleScoreChange.bind(this)
   }
 
 
@@ -44,6 +47,8 @@ export class Trivia extends React.Component {
 
 
 
+
+
     this.setState({categories: categories});
     this.setState({questions: questions});
     this.setState({correctAnswer: answers });
@@ -51,16 +56,25 @@ export class Trivia extends React.Component {
 
   }
 
+  handleScoreChange(score) {
+    this.setState({score})
+  }
+
+
+
 
 
 
 render() {
+  const score = this.state.score
   return (
+
     <div bsStyle="card" className="bg-light">
+    <Header score={this.state.score} />
     <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />
     <br></br>
-      <Answer correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
+      <Answer score={this.state.score} onScoreChange={this.handleScoreChange}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
     </div>
 )
 }
