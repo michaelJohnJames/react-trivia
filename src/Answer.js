@@ -5,6 +5,7 @@ import {btnStyles } from './index.css';
 import {Right} from './Right';
 import {Wrong} from './Wrong';
 import {Timeout} from './Timeout.js';
+import {Header} from './Header';
 import ReactDOM from 'react-dom';
 
 
@@ -107,16 +108,18 @@ export class Answer extends React.Component {
     const timer = document.getElementById('timer');
 
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      this.setState({score: 1})
+      this.handleHelper()
+      //ReactDOM.render(<Header />, document.getElementById('container'))
       ReactDOM.render(<Right />, document.getElementById('container'))
     }  else {
             ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
   }
 
-handleHelper(e) {
+handleHelper(score) {
   this.props.onScoreChange(this.props.score + 1)
 }
+
 
 
 
@@ -126,7 +129,8 @@ handleHelper(e) {
     //const ans = document.getElementById('ans');
     return (
     <div bsStyle="bg-light">
-      <div id="ans" onClick={this.handleHelper}>
+
+      <div id="ans" onClick={this.checkAnswer}>
       </div>
       <br/>
 

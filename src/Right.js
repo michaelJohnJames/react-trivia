@@ -2,28 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Container} from './Container';
 import {Button} from 'react-bootstrap';
+import {Trivia} from './Trivia';
+import {Header} from './Header';
 
 
 export class Right extends React.Component {
   constructor(props) {
     super(props);
     this.state = { numRight: 1 }
-    this.addToNum = this.addToNum.bind(this);
     this.nextQuestion = this.nextQuestion.bind(this);
   }
 
-componentWillMount() {
-  this.setState({umRight: this.state.numRight + 1})
+componentDidMount() {
+  this.props.handleHelper
 
 }
 
 nextQuestion() {
-  ReactDOM.render(<Container score={this.props.score} />, document.getElementById('container'))
+  ReactDOM.render(<Container />, document.getElementById('container'))
 }
 
-addToNum() {
-  this.setState({numRight: this.state.numRight + 1})
-}
+// handleHelper() {
+//   this.props.onScoreChange(this.props.score + 1)
+// }
+
+
 
 
 
