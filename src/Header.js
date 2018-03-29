@@ -16,12 +16,12 @@ export class Header extends React.Component {
       <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="#home">Trivia Game</a>
+        <a href="/">What Do You Know?</a>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
       <NavItem>
-        Your score: {this.props.score}
+        Your score: {this.state.score}
       </NavItem>
     </Nav>
   </Navbar>

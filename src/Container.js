@@ -26,14 +26,18 @@ render() {
   const score = this.state.score
   return (
     <div>
-      
       <Trivia score={this.state.score} onScoreChange={this.handleScoreChange} />
+
 
     </div>
   )
 }
 
+
+
 }
 
 
-//ReactDOM.render(<Container />, document.getElementById('container'))
+
+//ReactDOM.render(<Trivia />, document.getElementById('container'));
+// ReactDOM.render(<Header score={this.state.score} onScoreChange={this.handleScoreChange}  />, document.getElementById('header'));

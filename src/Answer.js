@@ -109,8 +109,8 @@ export class Answer extends React.Component {
 
     if (e.target.textContent === this.props.correctAnswer[0]) {
       this.handleHelper()
-      //ReactDOM.render(<Header />, document.getElementById('container'))
       ReactDOM.render(<Right />, document.getElementById('container'))
+
     }  else {
             ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
