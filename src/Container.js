@@ -26,7 +26,7 @@ render() {
   const score = this.state.score
   return (
     <div>
-      <Header score={this.state.score} onScoreChange={this.handleScoreChange} />
+      
       <Trivia score={this.state.score} onScoreChange={this.handleScoreChange} />
 
     </div>
