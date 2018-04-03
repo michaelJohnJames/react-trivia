@@ -26,6 +26,8 @@ export class Answer extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
+        correct: false,
+        numRight: 0,
         score: this.props.score,
       timerStart: 10,
       time: setInterval(function () {
@@ -108,11 +110,13 @@ export class Answer extends React.Component {
     const timer = document.getElementById('timer');
 
     if (e.target.textContent === this.props.correctAnswer[0]) {
-      this.handleHelper()
+      this.setState({numRight: this.state.numRight + 1})
+      //this.handleHelper()
+      //this.setState({correct: true})
       ReactDOM.render(<Right />, document.getElementById('container'))
 
     }  else {
-            ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
+      ReactDOM.render(<Wrong correctAnswer={this.props.correctAnswer[0]} />, document.getElementById('container'))
     }
   }
 
@@ -129,9 +133,10 @@ handleHelper(score) {
     //const ans = document.getElementById('ans');
     return (
     <div bsStyle="bg-light">
-
       <div id="ans" onClick={this.checkAnswer}>
       </div>
+        {this.props.score}
+        {this.props.correctAnswer[0]}
       <br/>
 
     </div>

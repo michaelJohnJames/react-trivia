@@ -12,7 +12,7 @@ import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Header  />, document.getElementById('header'));
+//ReactDOM.render(<Header  />, document.getElementById('header'));
 //ReactDOM.render(<Container />, document.getElementById('container'));
 ReactDOM.render(<Welcome  />, document.getElementById('container'));
 

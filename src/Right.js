@@ -4,6 +4,7 @@ import {Container} from './Container';
 import {Button} from 'react-bootstrap';
 import {Trivia} from './Trivia';
 import {Header} from './Header';
+import {Welcome} from './Welcome';
 
 
 export class Right extends React.Component {
@@ -19,6 +20,7 @@ componentDidMount() {
 }
 
 nextQuestion() {
+  console.log("worked")
   ReactDOM.render(<Container />, document.getElementById('container'))
 }
 
@@ -31,6 +33,7 @@ nextQuestion() {
 
 
   render() {
+
     return (
       <div class="card" class="bg-light">
         <br></br>
@@ -43,8 +46,6 @@ nextQuestion() {
         <br></br>
         <br></br>
       </div>
-
-
-    )
+)
   }
 }

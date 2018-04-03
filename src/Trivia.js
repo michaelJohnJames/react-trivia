@@ -74,7 +74,7 @@ render() {
     <br></br>
       <Question categories={this.state.categories} questions={this.state.questions} />
     <br></br>
-      <Answer score={this.props.score} onScoreChange={this.handleHelper}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
+      <Answer score={this.props.score} onScoreChange={this.props.onScoreChange}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
     </div>
 )
 }

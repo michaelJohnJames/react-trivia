@@ -13,20 +13,21 @@ export class Container extends React.Component {
     this.state = {
       score: 0
     }
-    this.handleScoreChange = this.handleScoreChange.bind(this)
+    this.handleHelper = this.handleHelper.bind(this)
   }
 
-  handleScoreChange(score) {
-    this.setState({score})
+  handleHelper(score) {
+    //this.setState({score})
+    this.props.onScoreChange(this.props.score + 1)
   }
 
 
 
 render() {
-  const score = this.state.score
+
   return (
     <div>
-      <Trivia score={this.state.score} onScoreChange={this.handleScoreChange} />
+      <Trivia score={this.props.score} onScoreChange={this.handleHelper} />
 
 
     </div>
