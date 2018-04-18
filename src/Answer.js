@@ -135,8 +135,7 @@ handleHelper(score) {
     <div bsStyle="bg-light">
       <div id="ans" onClick={this.checkAnswer}>
       </div>
-        {this.props.score}
-        {this.props.correctAnswer[0]}
+
       <br/>
 
     </div>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {Question} from './Question';
 import {Answer} from './Answer';
 import {Header} from './Header';
-import Bootstrap from 'react-bootstrap';
+import {Well} from 'react-bootstrap';
 
 
 
@@ -72,9 +72,11 @@ render() {
 
     <div bsStyle="card" className="bg-light">
     <br></br>
+    <Well id="trivia-box">
       <Question categories={this.state.categories} questions={this.state.questions} />
     <br></br>
       <Answer score={this.props.score} onScoreChange={this.props.onScoreChange}  correctAnswer={this.state.correctAnswer} wrongAnswers={this.state.wrongAnswers} />
+      </Well>
     </div>
 )
 }

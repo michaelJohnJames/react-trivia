@@ -39,14 +39,19 @@ export class Welcome extends React.Component {
       <div>
       <br/>
       <br/>
+      <div id="left-bar"></div>
+      <div id="title">
         <h2>Welcome to</h2>
         <h1 bsSize="large">What Do You Know?</h1>
+        </div>
       <br/>
       <br/>
         <p>You will be asked random questions. See how many you can get right.</p>
       <br/>
         <Button bsStyle="success" bsSize="large" onClick={this.newGame}>Play a new game</Button>
-      </div>
+
+      <div id="right-bar"></div>
+        </div>
     )
   } else {
     return(
