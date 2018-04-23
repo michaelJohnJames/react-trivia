@@ -39,7 +39,7 @@ export class Welcome extends React.Component {
       <div id="welcome">
       <div id="title">
         <h2>Welcome to</h2>
-        <h1 bsSize="large">What Do You Know?</h1>
+        <h1>What Do You Know?</h1>
         </div>
       <br/>
       <br/>

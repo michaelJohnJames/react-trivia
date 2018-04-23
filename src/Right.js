@@ -35,7 +35,7 @@ nextQuestion() {
   render() {
 
     return (
-      <div class="card" class="bg-light">
+      <div className="right-wrong">
         <br></br>
         <br></br>
         <h2>You are correct!</h2>

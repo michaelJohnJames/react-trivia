@@ -1,13 +1,16 @@
+import './index.css';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import App from './App';
 import { Trivia } from './Trivia';
 import { Container } from './Container';
 import { Header } from './Header';
 import { Welcome } from './Welcome';
+
 import registerServiceWorker from './registerServiceWorker';
-import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+
 
 
 

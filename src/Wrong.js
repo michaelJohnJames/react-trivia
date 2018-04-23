@@ -17,7 +17,7 @@ export class Wrong extends React.Component {
 
   render() {
     return (
-      <div className="card" className="bg-light">
+      <div className="right-wrong">
         <br></br>
         <br></br>
       <h2>Sorry, you are incorrect!</h2>

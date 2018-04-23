@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
 import {Navbar, Nav, NavItem, MenuItem, NavDropdown} from 'react-bootstrap';
 
 export class Header extends React.Component {
@@ -20,12 +21,12 @@ export class Header extends React.Component {
     return(
       <Navbar>
     <Navbar.Header>
-      <Navbar.Brand>
+      <Navbar.Brand className="link">
         <a href="/">What Do You Know?</a>
       </Navbar.Brand>
 
     </Navbar.Header>
-    Score: {sessionStorage.getItem('score')};
+
     <Nav>
       <NavItem>
 
