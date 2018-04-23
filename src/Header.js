@@ -7,7 +7,7 @@ export class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      score: 0
     }
     this.handleScoreChange = this.handleScoreChange.bind(this)
   }
@@ -23,10 +23,12 @@ export class Header extends React.Component {
       <Navbar.Brand>
         <a href="/">What Do You Know?</a>
       </Navbar.Brand>
+
     </Navbar.Header>
+    Score: {sessionStorage.getItem('score')};
     <Nav>
       <NavItem>
-        
+
       </NavItem>
     </Nav>
   </Navbar>

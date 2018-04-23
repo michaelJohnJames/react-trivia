@@ -70,7 +70,7 @@ render() {
 
   return (
 
-    <div bsStyle="card" className="bg-light">
+    <div>
     <br></br>
     <Well id="trivia-box">
       <Question categories={this.state.categories} questions={this.state.questions} />

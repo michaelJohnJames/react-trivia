@@ -1,8 +1,8 @@
 #root {
   text-align: center;
   background-color: #ffcc00;
-
   margin: 0 auto;
+
 }
 
 #header {
@@ -10,7 +10,7 @@
 }
 
 #id {
-  border: 2px dashed red;
+
 }
 
 
@@ -37,6 +37,7 @@
 
 .App-intro {
   font-size: large;
+
 }
 
 @keyframes App-logo-spin {

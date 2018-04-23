@@ -36,10 +36,7 @@ export class Welcome extends React.Component {
     const score = this.state.score
     if (this.state.start == false) {
     return(
-      <div>
-      <br/>
-      <br/>
-      <div id="left-bar"></div>
+      <div id="welcome">
       <div id="title">
         <h2>Welcome to</h2>
         <h1 bsSize="large">What Do You Know?</h1>
@@ -48,10 +45,8 @@ export class Welcome extends React.Component {
       <br/>
         <p>You will be asked random questions. See how many you can get right.</p>
       <br/>
-        <Button bsStyle="success" bsSize="large" onClick={this.newGame}>Play a new game</Button>
-
-      <div id="right-bar"></div>
-        </div>
+        <Button bsStyle="success" bsSize="large" onClick={this.newGame}>Start</Button>
+      </div>
     )
   } else {
     return(

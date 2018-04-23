@@ -113,6 +113,7 @@ export class Answer extends React.Component {
       this.setState({numRight: this.state.numRight + 1})
       //this.handleHelper()
       //this.setState({correct: true})
+      sessionStorage.setItem('score', this.state.score + 1);
       ReactDOM.render(<Right />, document.getElementById('container'))
 
     }  else {
